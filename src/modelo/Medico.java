@@ -5,12 +5,13 @@ import java.util.regex.Pattern;
 public class Medico extends Paciente{
 	private String numeroEmpleado;
     private String cedulaProfesional;
-    private Consulta consulta; // Relación de composición
 
-    public Medico(String numeroEmpleado, String cedulaProfesional, Consulta consulta) throws Exception {
-        this.numeroEmpleado = numeroEmpleado;
-        this.cedulaProfesional = cedulaProfesional;
-        this.consulta = consulta;
+    public Medico(String nombre, String apellidos, int edad, String direccionElectronica, 
+    		Telefono telefono, String numeroEmpleado, 
+    		String cedulaProfesional) throws Exception {
+    	super(nombre, apellidos, edad, direccionElectronica, telefono);
+    	setNumeroEmpleado(numeroEmpleado);
+        setCedulaProfesional(cedulaProfesional);
     }
 
 	public String getNumeroEmpleado() {
@@ -39,14 +40,6 @@ public class Medico extends Paciente{
 		}else {
 			throw new Exception("La cedula profesional no es validas");
 		}
-	}
-
-	public Consulta getConsulta() {
-		return consulta;
-	}
-
-	public void setConsulta(Consulta consulta) {
-		this.consulta = consulta;
 	}
 
 }

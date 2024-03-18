@@ -8,8 +8,8 @@ public class Estudiante extends Paciente {
 	
 	public Estudiante() {}
 
-	public Estudiante(String matricula) throws Exception{
-		super();
+	public Estudiante(String nombre, String apellidos, int edad, String direccionElectronica, Telefono telefono, String matricula) throws Exception{
+		super(nombre, apellidos, edad, direccionElectronica, telefono);
 		setMatricula(matricula);
 	}
 

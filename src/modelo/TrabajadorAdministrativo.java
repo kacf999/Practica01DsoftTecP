@@ -1,30 +1,23 @@
 package modelo;
 
 public class TrabajadorAdministrativo extends Paciente {
-	private int numeroEmpleado;
-    private int edad;
+	private String numeroEmpleado;
 
     // Constructor
-    public TrabajadorAdministrativo(int numeroEmpleado, int edad) throws Exception{
-        super();
-        this.numeroEmpleado = numeroEmpleado;
-        this.edad = edad;
+    public TrabajadorAdministrativo(String nombre, String apellidos, int edad, 
+    		String direccionElectronica, Telefono telefono, 
+    		String numeroEmpleado) throws Exception{
+        super(nombre, apellidos, edad, direccionElectronica, telefono);
+        setNumeroEmpleado(numeroEmpleado);
     }
 
     // Getters y Setters
-    public int getNumeroEmpleado() {
+    public String getNumeroEmpleado() {
         return numeroEmpleado;
     }
 
-    public void setNumeroEmpleado(int numeroEmpleado) {
+    public void setNumeroEmpleado(String numeroEmpleado) {
         this.numeroEmpleado = numeroEmpleado;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 }

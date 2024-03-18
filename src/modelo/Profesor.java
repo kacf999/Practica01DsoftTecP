@@ -1,31 +1,33 @@
 package modelo;
 
 public class Profesor extends Paciente {
-	private int numeroEmpleado;
-    private int edad;
+	private String numeroEmpleado;
+	private String cedulaProfesional;
 
     // Constructor
-    public Profesor(int numeroEmpleado, int edad) throws Exception{
-        super();
-        this.numeroEmpleado = numeroEmpleado;
-        this.edad = edad;
+    public Profesor(String nombre, String apellidos, int edad, 
+    		String direccionElectronica, Telefono telefono,
+    		String numeroEmpleado, String cedulaProfesional) throws Exception{
+        super(nombre, apellidos, edad, direccionElectronica, telefono);
+        setNumeroEmpleado(numeroEmpleado);
+        setCedulaProfesional(cedulaProfesional);
     }
 
     // Getters y Setters
-    public int getNumeroEmpleado() {
+    public String getNumeroEmpleado() {
         return numeroEmpleado;
     }
 
-    public void setNumeroEmpleado(int numeroEmpleado) {
+    public void setNumeroEmpleado(String numeroEmpleado) {
         this.numeroEmpleado = numeroEmpleado;
     }
 
-    public int getEdad() {
-        return edad;
-    }
+	public String getCedulaProfesional() {
+		return cedulaProfesional;
+	}
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
+	public void setCedulaProfesional(String cedulaProfecional) {
+		this.cedulaProfesional = cedulaProfecional;
+	}
+    
 }

@@ -5,11 +5,14 @@ public class Consulta {
 	private Calendar fecha;
     private String diagnostico;
     private String tratamiento;
+    private Medico medico;
 
-    public Consulta(Calendar fecha, String diagnostico, String tratamiento) {
-        this.fecha = fecha;
-        this.diagnostico = diagnostico;
-        this.tratamiento = tratamiento;
+    public Consulta(Calendar fecha, String diagnostico, 
+    		String tratamiento, Medico medico) throws Exception{
+        setFecha(fecha);
+        setDiagnostico(diagnostico);
+        setTratamiento(tratamiento);
+        setMedico(medico);
     }
 
 	
@@ -37,4 +40,14 @@ public class Consulta {
 		this.tratamiento = tratamiento;
 	}
 
+
+	public Medico getMedico() {
+		return medico;
+	}
+
+
+	public void setMedico(Medico medico) {
+		this.medico = medico;
+	}
+	
 }
