@@ -23,6 +23,13 @@ public class Consulta {
 	public void setFecha(Calendar fecha) {
 		this.fecha = fecha;
 	}
+	
+	public String obtenerFecha() {
+		int anio = fecha.get(Calendar.YEAR);
+		int mes = fecha.get(Calendar.MONTH);
+		int dia = fecha.get(Calendar.DAY_OF_MONTH);
+		return ""+dia+"/"+(mes+1)+"/"+anio;
+	}
 
 	public String getDiagnostico() {
 		return diagnostico;

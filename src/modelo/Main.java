@@ -1,4 +1,5 @@
 package modelo;
+import java.util.Calendar;
 
 public class Main {
 
@@ -17,6 +18,21 @@ public class Main {
 		
 		TrabajadorAdministrativo secretaria = new TrabajadorAdministrativo("Clara", "Robles", 32, "ChocoFlan@Hotmail.com", telefono, "89234");
 		System.out.println("Nombre: "+secretaria.getNombre()+" numero de Empleado: "+secretaria.getNumeroEmpleado());
+		
+		Calendar fecha = Calendar.getInstance();
+		//fecha.set(2023, 4, 1); anio, mes(enero = 0), dia
+		Consulta consulta = new Consulta(fecha, "dolor en las rodillas","se le amputaron las rodillas",medico);
+		System.out.println("Fecha: "+consulta.obtenerFecha()+" diagnostico:"+consulta.getDiagnostico()+" tratamiento:"+consulta.getTratamiento()+" medico:"+medico.getNombre());
+		
+		Expediente expediente = new Expediente(estudiante);
+		expediente.agregarConsulta(consulta);
+		
+		
+		fecha.set(2023, 2, 4);
+		Consulta consulta2 = new Consulta(fecha, "Le rompieron el corazon","Cariñosas 2 veces a la semana",medico);
+		expediente.agregarConsulta(consulta2);
+		
+		expediente.mostrarConsultas();
 	}
 
 }
