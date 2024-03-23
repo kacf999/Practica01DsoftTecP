@@ -10,7 +10,7 @@ public class Main {
 		
 		estudiante.mostrarDatos();
 		
-		Medico medico = new Medico("Alegandra", "Mercado", 45, "Doctora@gmail.com", telefono, "12345", "ASD123");
+		Medico medico = new Medico("Alegandra", "Mercado", 45, "Doctora@gmail.com", telefono, "12345", "JUCA800215HDFLRN091234567890");
 		medico.mostrarDatos();
 		
 		Profesor profesor = new Profesor("Javier", "Alvares", 29, "MonasChinas@Yahoo.com", telefono2, "98345");

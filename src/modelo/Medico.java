@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 public class Medico extends Persona{
 	private String numeroEmpleado;
     private String cedulaProfesional;
+    
+    public Medico(){}
 
     public Medico(String nombre, String apellidos, int edad, String direccionElectronica, 
     		Telefono telefono, String numeroEmpleado, 
@@ -33,7 +35,7 @@ public class Medico extends Persona{
 	}
 
 	public void setCedulaProfesional(String cedulaProfesional) throws Exception{
-		Pattern pat = Pattern.compile("[A-Z]{3}[0-9]{3}");
+		Pattern pat = Pattern.compile("([A-Z]{4})([0-9]{6})(H|M)([A-Z]{5})([0-9]{2})([0-9]{10})");
 		Matcher mat = pat.matcher(cedulaProfesional);
 		if (mat.matches()) {
 		this.cedulaProfesional = cedulaProfesional;

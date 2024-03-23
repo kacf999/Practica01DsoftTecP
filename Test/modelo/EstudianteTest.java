@@ -31,8 +31,28 @@ class EstudianteTest {
 	}
 
 	@Test
-	void testSetMatricula() throws Exception{
+	void testSetMatriculaCP1() throws Exception{
 		estudiante.setMatricula("180030773");
+	}
+	
+	@Test
+	void testSetMatriculaCP2() throws Exception{
+		estudiante.setMatricula("022001234");
+	}
+	
+	@Test
+	void testSetMatriculaCP3() throws Exception{
+		estudiante.setMatricula("Hola mundo");
+	}
+	
+	@Test
+	void testSetMatriculaCP4() throws Exception{
+		estudiante.setMatricula("9");
+	}
+	
+	@Test
+	void testSetMatriculaCP5() throws Exception{
+		estudiante.setMatricula("100028437");
 	}
 
 	@Test
@@ -61,11 +81,6 @@ class EstudianteTest {
 	@Test
 	void testSetEdad2() throws Exception{
 		estudiante.setEdad(-78);
-	}
-
-	@Test
-	void testSetDireccionElectronica() {
-		fail("Not yet implemented");
 	}
 
 }

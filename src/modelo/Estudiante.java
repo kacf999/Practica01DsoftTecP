@@ -18,7 +18,7 @@ public class Estudiante extends Persona {
 	}
 
 	public void setMatricula(String matricula) throws Exception{
-		Pattern pat = Pattern.compile("[0-2][0-9]00[1-5][0-9]+");
+		Pattern pat = Pattern.compile("[0-2][0-9]00[1-5]([0-9]{4})");
 	    Matcher mat = pat.matcher(matricula);                                                                           
 	    if (mat.matches()) {
 	    	this.matricula = matricula;
