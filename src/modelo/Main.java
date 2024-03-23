@@ -5,19 +5,19 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		Telefono telefono = new Telefono(Tipo.tipo.Fijo, "5527529715");
+		Telefono telefono2 = new Telefono(Tipo.tipo.Celular, "5527523023");
 		Estudiante estudiante = new Estudiante("Jose", "Roberto", 63, "cosas@gmail.com",telefono,"180030773");
 		
-		System.out.println("Nombre "+estudiante.getNombre()+" Matricula "+estudiante.getMatricula());
-		System.out.println("Telefono "+estudiante.getTelefono().getNumero());
+		estudiante.mostrarDatos();
 		
 		Medico medico = new Medico("Alegandra", "Mercado", 45, "Doctora@gmail.com", telefono, "12345", "ASD123");
-		System.out.println("Nombre: "+medico.getNombre()+" cedula Profesional: "+medico.getCedulaProfesional());
+		medico.mostrarDatos();
 		
-		Profesor profesor = new Profesor("Javier", "Torres", 29, "MonasChinas@Yahoo.com", telefono, "98345","PSO098");
-		System.out.println("Nombre: "+profesor.getNombre()+" numero de Empleado: "+profesor.getCedulaProfesional());
+		Profesor profesor = new Profesor("Javier", "Alvares", 29, "MonasChinas@Yahoo.com", telefono2, "98345");
+		profesor.mostrarDatos();
 		
-		TrabajadorAdministrativo secretaria = new TrabajadorAdministrativo("Clara", "Robles", 32, "ChocoFlan@Hotmail.com", telefono, "89234");
-		System.out.println("Nombre: "+secretaria.getNombre()+" numero de Empleado: "+secretaria.getNumeroEmpleado());
+		TrabajadorAdministrativo secretaria = new TrabajadorAdministrativo("Clara", "Robles", 32, "ChocoFlan@Hotmail.com", telefono2, "89234");
+		secretaria.mostrarDatos();
 		
 		Calendar fecha = Calendar.getInstance();
 		//fecha.set(2023, 4, 1); anio, mes(enero = 0), dia
@@ -33,6 +33,24 @@ public class Main {
 		expediente.agregarConsulta(consulta2);
 		
 		expediente.mostrarConsultas();
+		
+		Expediente expediente2 = new Expediente(profesor);
+		expediente2.agregarConsulta(consulta);
+		expediente2.agregarConsulta(consulta2);
+		
+		Expediente expediente3 = new Expediente(secretaria);
+		expediente3.agregarConsulta(consulta);
+		expediente3.agregarConsulta(consulta2);
+		
+		ArchivoClinico archivo = new ArchivoClinico();
+		archivo.agregarExpediente(expediente3);
+		archivo.agregarExpediente(expediente);
+		archivo.agregarExpediente(expediente2);
+		archivo.mostrarExpedientes();
+		System.out.println("Mostrando expedientes ordenados");
+		
+		archivo.ordenarExpedientes();
+		archivo.mostrarExpedientes();
 	}
 
 }

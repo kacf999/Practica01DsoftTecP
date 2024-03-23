@@ -1,7 +1,7 @@
 package modelo;
 import java.util.Calendar;
 
-public class Consulta {
+public class Consulta{
 	private Calendar fecha;
     private String diagnostico;
     private String tratamiento;

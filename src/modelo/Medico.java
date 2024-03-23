@@ -2,7 +2,7 @@ package modelo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Medico extends Paciente{
+public class Medico extends Persona{
 	private String numeroEmpleado;
     private String cedulaProfesional;
 
@@ -41,5 +41,12 @@ public class Medico extends Paciente{
 			throw new Exception("La cedula profesional no es validas");
 		}
 	}
-
+	
+	public void mostrarDatos() {
+		System.out.println("Cedula Profesional: "+getCedulaProfesional());
+		System.out.println("Numero de Empleado: "+getNumeroEmpleado());
+		System.out.println("Nombre: "+getNombre()+ " Apellidos: "+getApellidos());
+		System.out.println("Edad: "+getEdad()+" Direccion Electronica: "+getDireccionElectronica());
+		System.out.println("Telefono: "+getTelefono().getNumero()+" tipo: "+getTelefono().getAtipo());
+	}
 }

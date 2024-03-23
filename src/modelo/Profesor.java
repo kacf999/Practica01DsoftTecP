@@ -1,16 +1,14 @@
 package modelo;
 
-public class Profesor extends Paciente {
+public class Profesor extends Persona {
 	private String numeroEmpleado;
-	private String cedulaProfesional;
 
     // Constructor
     public Profesor(String nombre, String apellidos, int edad, 
     		String direccionElectronica, Telefono telefono,
-    		String numeroEmpleado, String cedulaProfesional) throws Exception{
+    		String numeroEmpleado) throws Exception{
         super(nombre, apellidos, edad, direccionElectronica, telefono);
         setNumeroEmpleado(numeroEmpleado);
-        setCedulaProfesional(cedulaProfesional);
     }
 
     // Getters y Setters
@@ -22,12 +20,10 @@ public class Profesor extends Paciente {
         this.numeroEmpleado = numeroEmpleado;
     }
 
-	public String getCedulaProfesional() {
-		return cedulaProfesional;
+	public void mostrarDatos() {
+		System.out.println("Numero de Empleado: "+getNumeroEmpleado());
+		System.out.println("Nombre: "+getNombre()+ " Apellidos: "+getApellidos());
+		System.out.println("Edad: "+getEdad()+" Direccion Electronica: "+getDireccionElectronica());
+		System.out.println("Telefono: "+getTelefono().getNumero()+" tipo: "+getTelefono().getAtipo());
 	}
-
-	public void setCedulaProfesional(String cedulaProfecional) {
-		this.cedulaProfesional = cedulaProfecional;
-	}
-    
 }

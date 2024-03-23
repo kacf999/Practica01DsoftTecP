@@ -3,7 +3,7 @@ package modelo;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Estudiante extends Paciente {
+public class Estudiante extends Persona {
 	private String matricula;
 	
 	public Estudiante() {}
@@ -25,6 +25,13 @@ public class Estudiante extends Paciente {
 	    } else {
 	        throw new Exception("Matricula no valida");                                                                              
 	    }
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("Matricula: "+getMatricula());
+		System.out.println("Nombre: "+getNombre()+ " Apellidos: "+getApellidos());
+		System.out.println("Edad: "+getEdad()+" Direccion Electronica: "+getDireccionElectronica());
+		System.out.println("Telefono: "+getTelefono().getNumero()+" tipo: "+getTelefono().getAtipo());
 	}
 	
 }
